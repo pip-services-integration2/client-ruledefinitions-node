@@ -18,12 +18,12 @@ export class RuleDefinitionsDirectClientV1 extends DirectClient<any> implements 
         let timing = this.instrument(correlationId, 'ruledefinitions.get_rules');
 
         try {
-            return await this._controller.getRules(correlationId, filter, paging);
+            let res = await this._controller.getRules(correlationId, filter, paging);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -31,12 +31,12 @@ export class RuleDefinitionsDirectClientV1 extends DirectClient<any> implements 
         let timing = this.instrument(correlationId, 'ruledefinitions.get_rule_by_id');
         
         try {
-            return await this._controller.getRuleById(correlationId, rule_id);
+            let res = await this._controller.getRuleById(correlationId, rule_id);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -44,12 +44,12 @@ export class RuleDefinitionsDirectClientV1 extends DirectClient<any> implements 
         let timing = this.instrument(correlationId, 'ruledefinitions.create_rule');
         
         try {
-            return await this._controller.createRule(correlationId, rule);
+            let res = await this._controller.createRule(correlationId, rule);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -57,12 +57,12 @@ export class RuleDefinitionsDirectClientV1 extends DirectClient<any> implements 
         let timing = this.instrument(correlationId, 'ruledefinitions.update_rule');
         
         try {
-            return await this._controller.updateRule(correlationId, rule);
+            let res = await this._controller.updateRule(correlationId, rule);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -70,12 +70,12 @@ export class RuleDefinitionsDirectClientV1 extends DirectClient<any> implements 
         let timing = this.instrument(correlationId, 'ruledefinitions.delete_rule_by_id');
         
         try {
-            return await this._controller.deleteRuleById(correlationId, rule_id);
+            let res = await this._controller.deleteRuleById(correlationId, rule_id);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 }

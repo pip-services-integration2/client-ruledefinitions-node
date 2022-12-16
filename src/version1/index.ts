@@ -5,4 +5,4 @@ export { RuleV1Schema } from './RuleV1Schema';
 export { IRuleDefinitionsClientV1 } from "./IRuleDefinitionsClientV1";
 export { RuleDefinitionsNullClientV1 } from "./RuleDefinitionsNullClientV1";
 export { RuleDefinitionsDirectClientV1 } from "./RuleDefinitionsDirectClientV1";
-export { RuleDefinitionsHttpClientV1 } from "./RuleDefinitionsHttpClientV1";
+export { RuleDefinitionsCommandableHttpClientV1 } from "./RuleDefinitionsCommandableHttpClientV1";
